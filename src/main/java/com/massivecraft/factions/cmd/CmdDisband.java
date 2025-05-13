@@ -89,7 +89,7 @@ public class CmdDisband extends FCommand {
 
     private boolean hasDisbandPermission(CommandContext context, Faction faction) {
         Access access = faction.getAccess(context.fPlayer, PermissableAction.DISBAND);
-        return context.fPlayer.getRole() == Role.LEADER || faction.getFPlayerLeader() == context.fPlayer || access == Access.ALLOW;
+        return context.fPlayer.getRole() == Role.LEADER || faction.getFPlayerAdmin() == context.fPlayer || access == Access.ALLOW;
     }
 
     private boolean isConfirmingDisband(CommandContext context) {
